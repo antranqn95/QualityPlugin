@@ -1,0 +1,20 @@
+build/
+.gradle/
+build/**/*.jar
+*.zip
+.DS_Store
+.idea/
+*.iml
+*.iws
+*.ipr
+local.properties
+.project
+.classpath
+.c9/
+*.swp
+*.swo
+*~
+dist/
+
+# AI-generated test files (output of generateTests task)
+sample-app/src/test/
