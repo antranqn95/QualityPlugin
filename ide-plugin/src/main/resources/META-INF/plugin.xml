@@ -1,0 +1,114 @@
+<idea-plugin>
+    <id>com.company.android-quality</id>
+    <name>Android Quality</name>
+    <version>1.0.0</version>
+    <vendor email="support@company.com" url="https://github.com/antranqn95/QualityPlugin">Company</vendor>
+
+    <description><![CDATA[
+        Real-time security vulnerability detection for Android/Kotlin code based on OWASP MASVS.
+        <br/><br/>
+        Highlights 10 categories of security issues directly in the editor:
+        hardcoded credentials, insecure HTTP, weak cryptography, log data leakage,
+        unencrypted SharedPreferences, JavaScript-enabled WebView, insecure Random,
+        exported components without permission checks, deep link injection, and insecure file access.
+    ]]></description>
+
+    <idea-version since-build="233" until-build="243.*"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Hardcoded credentials (MSTG-STORAGE-14)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.HardcodedCredentialsInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Insecure HTTP URL (MSTG-NETWORK-1)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.InsecureHttpUsageInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Weak cryptographic algorithm (MSTG-CRYPTO-4)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.WeakCryptographyInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Sensitive data in log statements (MSTG-STORAGE-3)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.LogSensitiveDataInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Unencrypted sensitive data in SharedPreferences (MSTG-STORAGE-1)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.UnencryptedStorageInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="JavaScript enabled in WebView (MSTG-PLATFORM-5)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.WebViewJsInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Insecure random number generator (MSTG-CRYPTO-6)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.InsecureRandomInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Exported component without permission check (MSTG-PLATFORM-1)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.ExportedComponentInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Deep link injection (MSTG-PLATFORM-3)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.DeepLinkInjectionInspection"/>
+
+        <localInspection
+            language="kotlin"
+            groupPath="Android"
+            groupName="Security (OWASP MASVS)"
+            displayName="Insecure file access (MSTG-STORAGE-2)"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.company.androidquality.ide.inspections.InsecureFileProviderInspection"/>
+
+    </extensions>
+</idea-plugin>
